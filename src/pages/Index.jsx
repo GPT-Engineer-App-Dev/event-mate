@@ -1,17 +1,33 @@
-// Update this page (the content is just a fallback if you fail and example)
-// Use chakra-ui
-import { Container, Text, VStack } from "@chakra-ui/react";
-
-// Example of using react-icons
-// import { FaRocket } from "react-icons/fa";
-// <IconButton aria-label="Add" icon={<FaRocket />} size="lg" />; // IconButton would also have to be imported from chakra
+import { Container, VStack, Heading, Text, Button, Box, HStack, IconButton } from "@chakra-ui/react";
+import { FaPlus, FaCalendarAlt } from "react-icons/fa";
 
 const Index = () => {
   return (
-    <Container centerContent maxW="container.md" height="100vh" display="flex" flexDirection="column" justifyContent="center" alignItems="center">
-      <VStack spacing={4}>
-        <Text fontSize="2xl">Your Blank Canvas</Text>
-        <Text>Chat with the agent to start making edits.</Text>
+    <Container centerContent maxW="container.lg" height="100vh" display="flex" flexDirection="column" justifyContent="center" alignItems="center">
+      <VStack spacing={8} width="100%">
+        <Heading as="h1" size="2xl" textAlign="center">Events Management</Heading>
+        <Text fontSize="lg" textAlign="center">Manage your events efficiently and effortlessly.</Text>
+        <HStack spacing={4}>
+          <Button leftIcon={<FaPlus />} colorScheme="teal" size="lg">Create Event</Button>
+          <Button leftIcon={<FaCalendarAlt />} colorScheme="blue" size="lg">View Events</Button>
+        </HStack>
+        <Box width="100%" mt={10}>
+          <Heading as="h2" size="lg" mb={4}>Upcoming Events</Heading>
+          <VStack spacing={4} align="stretch">
+            <Box p={5} shadow="md" borderWidth="1px">
+              <Heading fontSize="xl">Event 1</Heading>
+              <Text mt={4}>Details about Event 1</Text>
+            </Box>
+            <Box p={5} shadow="md" borderWidth="1px">
+              <Heading fontSize="xl">Event 2</Heading>
+              <Text mt={4}>Details about Event 2</Text>
+            </Box>
+            <Box p={5} shadow="md" borderWidth="1px">
+              <Heading fontSize="xl">Event 3</Heading>
+              <Text mt={4}>Details about Event 3</Text>
+            </Box>
+          </VStack>
+        </Box>
       </VStack>
     </Container>
   );
